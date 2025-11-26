@@ -63,6 +63,8 @@ These files are copied into the folder `/home/pi/.skyscraper` on RetroPie (or `/
 * AttractMode
 * Pegasus
 * RetroBat
+* Batocera
+* Generic (screenshot-only export)
 
 ## 📚 Supported scraping modules (set with '-s')
 Skyscraper supports a variety of different scraping sources called *scraping modules*. Use these to gather game data into the Skyscraper resource cache. Check the full list of [scraping modules](https://gemba.github.io/skyscraper/SCRAPINGMODULES/) and read more about the [resource cache](https://gemba.github.io/skyscraper/CACHE/).
