@@ -6,7 +6,7 @@ When generating a game list with Skyscraper you have the option of generating it
 
     Skyscraper will overwrite your game list (obviously). So if you have spend a lot of time hand-crafting metadata in a game list for any frontend, please remember to create a backup before overwriting it with Skyscraper. You can also tell Skyscraper to auto-backup old game lists prior to overwriting them. Read more about the [`gameListBackup` config option](CONFIGINI.md#gamelistbackup).
 
-Setting a frontend when generating a game list is done by setting the `-f <FRONTEND>` command-line parameter as explained [in the commandline documentation](CLIHELP.md#-f-frontend) or by setting it in `/home/<USER>/.skyscraper/config.ini` as explained [config file documentation](CONFIGINI.md#frontend). Use for the `<FRONTEND>` value the frontend name all lowercase and with alphabetical characters only: `emulationstation`, `esde`, `pegasus`, `retrobat`, `attractmode`. Some frontends have further options that are either optional or required. Check the frontend sections below for more information on this.
+Setting a frontend when generating a game list is done by setting the `-f <FRONTEND>` command-line parameter as explained [in the commandline documentation](CLIHELP.md#-f-frontend) or by setting it in `/home/<USER>/.skyscraper/config.ini` as explained [config file documentation](CONFIGINI.md#frontend). Use for the `<FRONTEND>` value the frontend name all lowercase and with alphabetical characters only: `emulationstation`, `esde`, `pegasus`, `retrobat`, `attractmode`, `batocera`, `generic`. Some frontends have further options that are either optional or required. Check the frontend sections below for more information on this.
 
 When generating a game list for any frontend, Skyscraper will try to preserve certain metadata. Check the frontend sections below for more information on what metadata is preserved per frontend.
 
@@ -289,3 +289,29 @@ You need to add the individual platform rom directories to Pegasus (if they are 
 #### Metadata preservation
 
 Skyscraper will preserve any metadata key-value pairs added to the header and / or individual game list entries.
+
+### Generic
+
+-   Default game list location: N/A (no game list generated)
+-   Default game list filename: N/A (no game list generated)
+-   Default screenshots folder: `<mediaFolder>/Imgs`
+
+The generic frontend is a minimal frontend that only exports screenshots into an "Imgs" folder without creating any metadata or game list files. This is useful when you only want to gather and organize screenshots without any accompanying metadata or frontend integration.
+
+To use the generic frontend, simply specify it with `-f generic`:
+
+```bash
+Skyscraper -p <PLATFORM> -f generic
+```
+
+The generic frontend will:
+
+-   Export only screenshot images to the `Imgs` subfolder within your media folder
+-   Not generate any game list or metadata files (e.g., no XML files)
+-   Not export any other media types (covers, videos, etc.)
+
+This frontend is ideal for users who want to maintain a simple collection of game screenshots without the overhead of metadata management or frontend-specific formats.
+
+#### Metadata preservation
+
+The generic frontend does not preserve any metadata as it does not generate or maintain any game list files.

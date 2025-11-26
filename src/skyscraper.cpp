@@ -33,6 +33,7 @@
 #include "config.h"
 #include "emulationstation.h"
 #include "esde.h"
+#include "generic.h"
 #include "pegasus.h"
 #include "settings.h"
 #include "strtools.h"
@@ -944,6 +945,8 @@ void Skyscraper::loadConfig(const QCommandLineParser &parser) {
         frontend = QSharedPointer<AbstractFrontend>(new Esde());
     } else if (config.frontend == "batocera") {
         frontend = QSharedPointer<AbstractFrontend>(new Batocera());
+    } else if (config.frontend == "generic") {
+        frontend = QSharedPointer<AbstractFrontend>(new Generic());
     }
 
     // Choose default scraper if none has been set yet
