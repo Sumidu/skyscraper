@@ -839,7 +839,8 @@ QStringList RuntimeCfg::parseFlags() {
 
 bool RuntimeCfg::validateFrontend(const QString &providedFrontend) {
     QStringList frontends = {"emulationstation", "retrobat", "attractmode",
-                             "pegasus",          "esde",     "batocera"};
+                             "pegasus",          "esde",     "batocera",
+                             "generic"};
     frontends.sort();
     if (!frontends.contains(providedFrontend)) {
         printf("\033[1;31mBummer! Unknown frontend '%s'. Known frontends are: "
