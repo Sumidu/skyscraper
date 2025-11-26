@@ -34,7 +34,7 @@ Generic::Generic() {}
 void Generic::assembleList(QString &finalOutput,
                            QList<GameEntry> &gameEntries) {
     // Generic frontend does not generate any game list
-    (void)gameEntries;
+    Q_UNUSED(gameEntries)
     finalOutput = "";
 }
 
